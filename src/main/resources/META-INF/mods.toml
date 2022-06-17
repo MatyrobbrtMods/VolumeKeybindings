@@ -1,0 +1,29 @@
+modLoader="javafml" #mandatory
+loaderVersion="[40,)" #mandatory This is typically bumped every Minecraft version by Forge. See our download page for lists of versions.
+license="MIT"
+issueTrackerURL="https://github.com/MatyrobbrtMods/VolumeKeybinds/issues" #optional
+[[mods]] #mandatory
+modId="${modid}" #mandatory
+version="${version}" #mandatory
+displayName="VolumeKeybinds" #mandatory
+#updateJSONURL="https://change.me.example.invalid/updates.json" #optional
+#displayURL="https://change.me.to.your.mods.homepage.example.invalid/" #optional
+logoFile="volumekeybinds.png" #optional
+#credits="Thanks for this example mod goes to Java" #optional
+authors="Matyrobbrt" #optional
+# The description text for the mod (multi line!) (#mandatory)
+description='''
+Simple client-side mod that adds keybindings to manipulate sound volume.
+'''
+[[dependencies.${modid}]] #optional
+    modId="forge" #mandatory
+    mandatory=true #mandatory
+    versionRange="[40,)" #mandatory
+    ordering="NONE"
+    side="CLIENT"
+[[dependencies.${modid}]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.18.2,1.19)"
+    ordering="NONE"
+    side="BOTH"
