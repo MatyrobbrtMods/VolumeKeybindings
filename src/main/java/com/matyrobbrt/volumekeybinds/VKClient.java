@@ -4,17 +4,17 @@ import net.minecraft.client.KeyMapping;
 import net.minecraft.client.Minecraft;
 import net.minecraft.sounds.SoundSource;
 import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.client.ClientRegistry;
+import net.minecraftforge.client.event.RegisterKeyMappingsEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 
 import java.util.Locale;
 
 @Mod.EventBusSubscriber(modid = VolumeKeybinds.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public class VKClient {
     @SubscribeEvent
-    static void onClientSetup(final FMLClientSetupEvent event) {
+    @SuppressWarnings("unused")
+    static void registerKeys(final RegisterKeyMappingsEvent event) {
         final var category = "key.categories." + VolumeKeybinds.MOD_ID;
         for (final var sound : SoundSource.values()) {
             final var soundLowercase = sound.toString().toLowerCase(Locale.ROOT);
@@ -42,9 +42,9 @@ public class VKClient {
                     super.setDown(pValue);
                 }
             };
-            ClientRegistry.registerKeyBinding(increase);
-            ClientRegistry.registerKeyBinding(decrease);
-            ClientRegistry.registerKeyBinding(mute);
+            event.register(increase);
+            event.register(decrease);
+            event.register(mute);
         }
     }
 

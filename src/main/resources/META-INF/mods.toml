@@ -18,7 +18,7 @@ Simple client-side mod that adds keybindings to manipulate sound volume.
 [[dependencies.${modid}]] #optional
     modId="forge" #mandatory
     mandatory=true #mandatory
-    versionRange="[41,)" #mandatory
+    versionRange="[41.1.0,)" #mandatory
     ordering="NONE"
     side="CLIENT"
 [[dependencies.${modid}]]
